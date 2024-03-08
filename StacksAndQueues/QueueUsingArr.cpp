@@ -15,6 +15,7 @@ class Queue{
         end = -1;
         currSize = 0;
     }
+
     Queue(int mxsz)
     {
         maxSize = mxsz;
@@ -42,6 +43,50 @@ class Queue{
         end = (end + 1)%maxSize;
 
         arr[end] = x;
-
+        // and cursize increased
+        currSize++:;
     }
+
+    int pop(){
+        // first check if queue is empty
+        if(start == -1)
+        {
+            exit(1);
+        }
+        int x = arr[start];
+        //note we have to check that we can do end -- or cursize == 1
+        if(cursize == 1)
+        {
+            start  = -1;
+            end = -1;
+        }
+        else
+        { // wrong wrong wrong we gonna remove from the front
+            // end--;
+            // currSize--;
+            start = (start + 1) % maxSize;
+        }
+        currSize-- ;
+        return x;
+    }
+
+    int top()
+    {
+        // cause start is -1 only when array is empty 
+        if(start == -1 )
+        exit(1);
+        
+        return  arr[start];
+    }
+
+    int Size(){
+        // maintaining this throughout the operations
+        return currSize;
+    }
+};
+
+int main()
+{
+    return 0;
+    
 }
