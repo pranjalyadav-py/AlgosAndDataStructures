@@ -23,7 +23,7 @@ public:
 
         // prev ans and ans from present node
         // what if root of val is neg then ans is the answer
-        
+
         ans = max(ans,l + r + root->val);
 
         //return l + r + root->val;  wrong dude its only from 1 branch
@@ -37,3 +37,6 @@ public:
         return ans;
     }
 };
+
+//TC - O(N)
+//SC - O(N)
